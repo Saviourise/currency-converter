@@ -1,0 +1,69 @@
+<div class="home-container">
+  <section class="section1">
+    <form #form="ngForm" sui-form>
+      <h2>Currency Converter</h2>
+
+      <div suiFormField>
+        <label for="currency">Select Currency</label>
+        <sui-select
+          [suiSearch]="true"
+          #currency1="ngModel"
+          suiPlaceholder="Select Currency"
+          required
+          ngModel
+          name="currency"
+          [suiOptions]="currencies"
+        >
+        </sui-select>
+      </div>
+      <div suiFormField>
+        <label for="amount">Amount</label>
+        <input
+          type="number"
+          #amount1="ngModel"
+          ngModel
+          required
+          name="amount"
+          placeholder="0"
+        />
+      </div>
+    </form>
+  </section>
+  <section class="section2">
+    <form #form2="ngForm" sui-form>
+      <h3>{{explanation}}</h3>
+
+      <div suiFormField>
+        <label for="currency2">Select Currency</label>
+        <sui-select
+          [suiSearch]="true"
+          #currency2="ngModel"
+          suiPlaceholder="Select Currency"
+          required
+          ngModel
+          name="currency2"
+          [suiOptions]="currencies"
+        >
+        </sui-select>
+      </div>
+      <div suiFormField>
+        <label for="amount2">Amount</label>
+        <input
+          type="text"
+          #amount2="ngModel"
+          ngModel
+          required
+          name="amount2"
+          placeholder={{convertedAmount}}
+          disabled
+          id="amount2"
+        />
+      </div>
+    </form>
+  </section>
+  <section class="convert-btn">
+    <button sui-button suiEmphasis="primary" (click)="onSubmit(form, form2)">
+      Convert
+    </button>
+  </section>
+</div>

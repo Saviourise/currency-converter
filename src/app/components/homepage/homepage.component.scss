@@ -1,0 +1,104 @@
+$primary-color: #f25252;
+$secondary-color: #2ea7f2;
+$tertiary-color: #f27979;
+$white-color: #fff;
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100svh;
+  padding: 0px 200px;
+  background: linear-gradient(
+    90deg,
+    $tertiary-color -50%,
+    $secondary-color 150%
+  );
+  position: relative;
+}
+
+.home-container > .section1,
+.home-container > .section2 {
+  flex: 1 1 400px;
+  height: 40%;
+  background: linear-gradient(120deg, $tertiary-color 0%, $primary-color 100%);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: $white-color;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.home-container > .section2 {
+  align-items: flex-end;
+}
+
+.home-container > .section2 {
+  background: linear-gradient(120deg, $white-color 0%, $secondary-color 100%);
+  border-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: $primary-color;
+}
+
+.convert-btn {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  width: 90px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.home-container > .section1 label {
+  color: $white-color;
+}
+.home-container > .section2 label {
+  color: $primary-color;
+}
+
+.home-container > .section1 form,
+.home-container > .section2 form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.home-container .ui.form #amount2:disabled {
+  opacity: 1;
+}
+
+.home-container .ui.form #amount2::placeholder {
+  color: #000;
+}
+
+@media screen and (max-width: 1200px) {
+  .home-container > .section2,
+  .home-container > .section1 {
+    align-items: center;
+    padding: 50px 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home-container {
+    padding: 0px;
+  }
+  .home-container > .section1,
+  .home-container > .section2 {
+    height: 50%;
+    border-radius: 0px;
+  }
+  .home-container > .section1 form,
+  .home-container > .section2 form {
+    width: 100%;
+  }
+}
